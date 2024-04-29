@@ -56,10 +56,21 @@ body {
   transition: transform 200ms, opacity 200ms;
 }
 
+
+/* 這樣就會有三條線了 */
 .bar:first-of-type {
   transform: translate(-50%, -300%);
 }
 
 .bar:last-of-type {
   transform: translate(-50%, 200%);
+}
+
+
+.bar.active.rotate:first-of-type {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.bar.active.rotate:last-of-type {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
