@@ -41,12 +41,11 @@ body {
   justify-content: center;
 }
 
-
 .bar {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -550%);
   width: 80px;
   height: 8px;
   background: #fff;
@@ -55,7 +54,6 @@ body {
   opacity: 1;
   transition: transform 200ms, opacity 200ms;
 }
-
 
 /* 這樣就會有三條線了 */
 .bar:first-of-type {
@@ -66,11 +64,20 @@ body {
   transform: translate(-50%, 200%);
 }
 
-
 .bar.active.rotate:first-of-type {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .bar.active.rotate:last-of-type {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 這會先讓 active 的 bar 移動。 */
+.bar.active {
+  transform: translate(-50%, -50%);
+}
+
+/* 這樣就會隱形了 */
+.bar:nth-child(2).active {
+  opacity: 0;
 }
