@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  filter: contrast(20);
+}
+
+.center {
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  transition: all 0.8s ease;
+  background-color: white;
+  border-radius: 50%;
+  position: sticky;
+  filter: blur(8px);
+}
+
+.ball {
+  position: absolute;
+  width: var(--r);
+  aspect-ratio: 1;
+  animation: anime var(--speed) infinite linear;
+  border-radius: 50%;
+}
+
+.ball::after {
+  content: "";
+  position: absolute;
+  width: var(--br);
+  aspect-ratio: 1;
+  background-color: red;
+  border-radius: 50%;
+}
+
+@keyframes anime {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

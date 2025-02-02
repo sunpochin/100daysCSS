@@ -1,0 +1,15 @@
+{
+	"name": "100-days-css-day12",
+	"version": "1.0.0",
+	"description": "",
+	"main": "scripts.js",
+	"scripts": {
+		"sass-dev": "sass --watch --update --style=expanded css",
+		"sass-prod": "sass --no-source-map --style=compressed css"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.77.1"
+	}
+}

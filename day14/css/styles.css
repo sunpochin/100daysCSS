@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background: #4b4841;
+  color: #212121;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  top: 110px;
+  left: 40px;
+  perspective: 800px;
+}
+.card:hover .flip {
+  transform: rotateY(180deg) translate3d(0px, 0px, 0px);
+  box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.flip {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  perspective: 1000px;
+  box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: skyblue;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  text-align: center;
+  overflow: hidden;
+}
+.front img,
+.back img {
+  position: relative;
+  top: 52px;
+  animation: bike 0.6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateX(0);
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+@keyframes bike {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1) translate3d(5px, 5px, 0px);
+  }
+}
+.street {
+  position: absolute;
+  top: 127px;
+  left: 80px;
+  width: 160px;
+  height: 13px;
+  overflow: hidden;
+}
+
+[class^=stripe-] {
+  position: absolute;
+  right: -25px;
+  top: 0;
+  height: 3px;
+  background-color: red;
+  border-radius: 3px;
+  animation: street 1s linear 0.3s infinite;
+}
+
+.stripe-2 {
+  width: 6px;
+  animation: street 0.9s linear 0.2s infinite;
+}
+
+.stripe-3 {
+  width: 8px;
+  animation: street 1.1s linear 0.5s infinite;
+}
+
+.stripe-4 {
+  width: 10px;
+  animation: street 0.9s linear 0.4s infinite;
+}
+
+.stripe-5 {
+  width: 12px;
+  animation: street 1.05s linear 0.6s infinite;
+}
+
+.stripe-6 {
+  width: 14px;
+  animation: street 0.85s linear 0.7s infinite;
+}
+
+.stripe-7 {
+  width: 16px;
+  animation: street 1.2s linear 0.5s infinite;
+}
+
+.stripe-8 {
+  width: 18px;
+  animation: street 0.8s linear 0.1s infinite;
+}
+
+.stripe-9 {
+  width: 20px;
+  animation: street 1.15s linear 0.4s infinite;
+}
+
+@keyframes street {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scaleX(1);
+  }
+  100% {
+    transform: translate3d(-210px, 0px, 0px) scaleX(0.8);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

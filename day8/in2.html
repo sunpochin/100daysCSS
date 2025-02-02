@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --r: 100px;
+            --br: 50px;
+            --speed: 4s;
+        }
+        .ball {
+            filter: blur(8px);
+            position: absolute;
+            width: var(--r);
+            aspect-ratio: 1;
+            animation: anime var(--speed) infinite linear;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .ball::after {
+            content: "";
+            position: absolute;
+            width: var(--br);
+            aspect-ratio: 1;
+            background-color: white;
+            border-radius: 50%;
+            top: 25%;
+            left: 25%;
+        }
+        @keyframes anime {
+            100% {
+                rotate: 360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

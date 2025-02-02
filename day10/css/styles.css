@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #4c4c4c;
+  color: #fff;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 212px;
+  height: 212px;
+  background: #242424;
+  border: 7px solid #3a3a3a;
+  border-radius: 50%;
+}
+
+.spinner {
+  position: absolute;
+  width: 202px;
+  height: 202px;
+  top: 5px;
+  left: 5px;
+  transform: rotate(-90deg);
+}
+
+.spinner > circle {
+  stroke: #f85b5b;
+  stroke-width: 3;
+  stroke-dasharray: 625;
+  stroke-dashoffset: 625;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0%, 100% {
+    stroke-dashoffset: 625;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

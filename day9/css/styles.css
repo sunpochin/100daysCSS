@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  --moon1: rgba(240,230,170,1);
+  --moon2: rgba(220,210,160,1);
+  --cloud1: rgba(40,50,75,1);
+  --cloud2: rgba(50,60,85,1);
+  --drop1: rgba(0,100,160,.8);
+  --drop2: rgba(0,120,180,.8);
+  --drop3: rgba(0,140,200,.8);
+  --sky: rgba(20,25,45,1);
+  --text: rgba(140,140,165,1);
+  --moon-left: 70px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.drawing {
+  height: 320px;
+  width: 400px;
+  background: var(--sky);
+  margin: 0px;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--moon1);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0px var(--moon1);
+  top: 50px;
+  left: var(--moon-left);
+  overflow: hidden;
+  margin: 0px;
+  animation: rise 1s ease-out;
+}
+
+@keyframes rise {
+  from {
+    top: 250px;
+    left: 30px;
+  }
+  to {
+    top: 50px;
+    left: var(--moon-left);
+  }
+}
+.moon > figure {
+  position: absolute;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--moon2);
+}
+
+.moon > figure:nth-child(3n+2) {
+  width: 5px;
+  height: 5px;
+}
+
+.moon > figure:nth-child(3n+3) {
+  width: 3px;
+  height: 3px;
+}
+
+.moon > figure:nth-child(1) {
+  width: 10px;
+  height: 10px;
+  top: 20px;
+  left: 40px;
+}
+
+.moon > figure:nth-child(3n) {
+  top: 20px;
+}
+
+.moon > figure:nth-child(4n) {
+  left: 40px;
+}
+
+.clouds {
+  position: absolute;
+  width: 400px;
+  height: 140px;
+  top: 180px;
+  left: 0px;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.clouds > figure {
+  position: absolute;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.clouds > figure:nth-child(-n+2) {
+  background: var(--cloud1);
+  width: 300px;
+  height: 300px;
+}
+
+.clouds > figure:nth-child(n+3) {
+  top: 60px;
+  background: var(--cloud2);
+  width: 300px;
+  height: 300px;
+}
+
+.clouds > figure:nth-child(1) {
+  left: -50px;
+}
+
+.clouds > figure:nth-child(2) {
+  left: 160px;
+}
+
+.clouds > figure:nth-child(3) {
+  left: -100px;
+}
+
+.clouds > figure:nth-child(4) {
+  top: 25px;
+  left: 70px;
+}
+
+.clouds > figure:nth-child(5) {
+  left: 280px;
+}
+
+.drop {
+  position: absolute;
+  height: 320px;
+  width: 400px;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.drop > figure {
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  border-radius: 100% 0px 100% 100%;
+  animation: rain infinite linear;
+}
+
+.drop > figure:nth-child(-n+10) {
+  height: 4px;
+  width: 4px;
+  background: var(--drop1);
+  animation-duration: 1.6s;
+}
+
+.drop > figure:nth-child(n+11):nth-child(-n+20) {
+  height: 6px;
+  width: 6px;
+  background: var(--drop2);
+  animation-duration: 1.3s;
+}
+
+.drop > figure:nth-child(n+21) {
+  height: 10px;
+  width: 10px;
+  background: var(--drop3);
+  animation-duration: 1s;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(320px);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,284 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+	--moon1: rgba(240,230,170,1);
+	--moon2: rgba(220,210,160,1);
+	--cloud1: rgba(40,50,75,1);
+	--cloud2: rgba(50,60,85,1);
+	--drop1: rgba(0,100,160,.8);
+	--drop2: rgba(0,120,180,.8);
+	--drop3: rgba(0,140,200,.8);
+	--sky: rgba(20,25,45,1);
+	--text: rgba(140,140,165,1);
+
+	--moon-left: 70px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.drawing {
+	height: 320px;
+	width: 400px;
+	background: var(--sky);
+	margin: 0px;
+	overflow: hidden;
+}
+
+.moon {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background: var(--moon1);
+	border-radius: 50%;
+	box-shadow: 0 0 10px 0px var(--moon1);
+	top: 50px;
+	// left: 50px;
+	left: var(--moon-left);
+	overflow: hidden;
+	margin: 0px;
+	animation: rise 1s ease-out;
+}
+
+@keyframes rise {
+	from {
+		top: 250px;
+		left: 30px;
+	}
+	to {
+		top: 50px;
+		left: var(--moon-left);
+	}
+
+}
+
+.moon > figure {
+	position: absolute;
+	margin: 0;
+	border-radius: 50%;
+	background: var(--moon2);
+}
+
+// .moon > figure:nth-child(3n + 4) {
+// 	width: 8px;
+// 	height: 8px;
+// }
+
+.moon > figure:nth-child(3n + 2) {
+	width: 5px;
+	height: 5px;
+}
+
+.moon > figure:nth-child(3n + 3) {
+	width: 3px;
+	height: 3px;
+}
+
+.moon > figure:nth-child(1) {
+	width: 10px;
+	height: 10px;
+	top: 20px;
+	left: 40px;
+}
+
+.moon > figure:nth-child(3n) {
+	top: 20px;
+}
+
+.moon > figure:nth-child(4n) {
+	left: 40px;
+}
+
+.clouds {
+	position: absolute;
+	width: 400px;
+	height: 140px;
+	top: 180px;
+	left: 0px;
+	overflow: hidden;
+	margin: 0px;
+}
+
+.clouds > figure {
+	position: absolute;
+	border-radius: 50%;
+	margin: 0;
+}
+
+.clouds > figure:nth-child(-n + 2) {
+	background: var(--cloud1);
+	width: 300px;
+	height: 300px;
+}
+
+.clouds > figure:nth-child(n + 3) {
+	top: 60px;
+	background: var(--cloud2);
+	width: 300px;
+	height: 300px;
+}
+
+.clouds > figure:nth-child(1) {
+	left: -50px;
+}
+
+.clouds > figure:nth-child(2) {
+	left: 160px;
+}
+
+.clouds > figure:nth-child(3) {
+	left: -100px;
+}
+
+.clouds > figure:nth-child(4) {
+	top: 25px;
+	left: 70px;
+}
+
+.clouds > figure:nth-child(5) {
+	left: 280px;
+}
+
+.drop {
+	position: absolute;
+	height: 320px;
+	width: 400px;
+	overflow: hidden;
+	margin: 0px;
+}
+
+.drop > figure {
+	position: absolute;
+	margin: 0;
+	top: 10px;
+	border-radius: 100% 0px 100% 100%;
+	animation: rain infinite linear;
+}
+
+
+
+
+// 為何是 -n+10 -n+20 而不是 n+10 n+20
+// ChatGPT
+// nth-child(-n+10) 和 nth-child(-n+20) 是 CSS 的 nth-child 選擇器的用法，用來選擇一組元素。這種寫法可能看起來有些奇怪，但它實際上是有特定意圖和用途的。
+// nth-child(-n+10)
+// 這種寫法的目的是選擇前 10 個子元素。-n+10 的意思是：
+//     當 n = 0 時，選擇第 10 個元素（10）
+//     當 n = 1 時，選擇第 9 個元素（10 - 1 = 9）
+//     當 n = 2 時，選擇第 8 個元素（10 - 2 = 8）
+//     ...
+//     當 n = 9 時，選擇第 1 個元素（10 - 9 = 1）
+
+// 所以，nth-child(-n+10) 選擇從第 1 個到第 10 個子元素。
+// nth-child(n+11):nth-child(-n+20)
+// 這段代碼其實是兩個 nth-child 選擇器的結合，用於選擇第 11 到第 20 個子元素。
+//     nth-child(n+11) 意思是選擇第 11 個及以後的元素。
+//     nth-child(-n+20) 意思是選擇前 20 個元素。
+// 這兩個選擇器結合起來 (nth-child(n+11):nth-child(-n+20)) 意味著選擇那些既符合 "第 11 個及以後" 的條件，又符合 "前 20 個" 的條件，也就是第 11 到第 20 個元素。
+// nth-child(n+21)
+
+// 這個比較簡單，它表示從第 21 個開始的所有子元素，n 從 0 開始。
+// 總結
+
+// 使用 -n+10 和 -n+20 是為了選擇特定範圍內的元素。這些範圍有助於根據不同條件（例如大小、顏色、動畫時間等）設置不同的樣式和行為。
+// 補充說明
+
+// 這裡是這些選擇器的直觀解釋：
+
+//     nth-child(-n+10)：選擇前 10 個子元素。
+//     nth-child(n+11):nth-child(-n+20)：選擇第 11 到第 20 個子元素。
+//     nth-child(n+21)：選擇第 21 個及以後的子元素。
+
+// 希望這樣的解釋能幫助你理解為什麼這段代碼使用了 -n+10 和 -n+20 這種寫法。
+
+
+.drop > figure:nth-child(-n+10) {
+	height: 4px;
+	width: 4px;
+	background: var(--drop1);
+	animation-duration: 1.6s;
+}
+
+.drop > figure:nth-child(n+11):nth-child(-n+20) {
+	height: 6px;
+	width: 6px;
+	background: var(--drop2);
+	animation-duration: 1.3s;
+}
+
+.drop > figure:nth-child(n+21) {
+	height: 10px;
+	width: 10px;
+	background: var(--drop3);
+	animation-duration: 1s;
+}
+
+
+@keyframes rain {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(320px);
+  }
+}
+
+
+// @keyframes rain {
+// 	0% {
+// 		transform: translate(0,0) scaleX(1) scaleY(1) rotate(-30deg);
+// 	}
+// 	85% {
+// 		transform: translate(-50px,323px) scaleX(1) scaleY(1) rotate(-30deg);
+// 	}
+// 	100% {
+// 		transform: translate(-55px,325px) scaleX(3) scaleY(0) rotate(-30deg);
+// 	}
+// }
+
+
+// .infos {
+// 	height: 80px;
+// 	width: 400px;
+// 	background: whithesmoke;
+// 	display: grid;
+// 	grid-template-columns: 110px 140px 150px;
+// 	align-items: center;
+// 	align-content: center;
+// 	justify-items: start;
+// 	font-weight: 100;
+// 	color: var(--text);
+// 	box-sizing: border-box;
+// }
+
+// .date {
+// 	margin-left: auto;
+// 	margin-right: 20px;
+// }
+
+// .degree{ 
+// 	grid-row: span 2;
+// 	font-size: 3rem;
+// 	margin-left: 20px;
+// }
+
+// strong {
+// 	font-weight: 350;
+// 	color: #555;
+// }
