@@ -1,3 +1,5 @@
+import lodash
+
 function clamp(number, lower, upper) {
   if (number < lower) {
     return lower;
@@ -7,6 +9,8 @@ function clamp(number, lower, upper) {
     return number;
   }
 }
+
+
 
 // 範圍中，返回原值
 console.log(clamp(7, 0, 9)) // => 7
