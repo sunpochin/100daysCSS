@@ -11,7 +11,6 @@ function clamp(number, lower, upper) {
 }
 
 
-
 // 範圍中，返回原值
 console.log(clamp(7, 0, 9)) // => 7
 
