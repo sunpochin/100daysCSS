@@ -11,7 +11,7 @@ function clamp(number, lower, upper) {
 }
 
 // touch and go
-// inside turn
+// inside turn, outside turn
 
 // 範圍中，返回原值
 console.log(clamp(7, 0, 9)) // => 7
